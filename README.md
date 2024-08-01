@@ -38,21 +38,21 @@ Check out requirements.txt for the correct version of packages.
   * `--le (or -l)` Path to output Label Encoder 
   * `--plot (or -p)` Path to output loss/accuracy plot
   * `--cm (or -c)` Path to confusion matrix  
-  **Example**: `python train_model.py -d dataset -m liveness.h5 -l label_encoder.pickle -p plot.png -c cm.png`
+  * **Example**: `python train_model.py -d dataset -m liveness.h5 -l label_encoder.pickle -p plot.png -c cm.png`
 * **`liveness_app.py`**: Run face detection, draw bounding box, and run liveness detection model real-time on webcam  
   Command line argument:
   * `--confidence (or -c)` Confidence of face detector model (default is 0.5 | 50%)  
-  **Example**: `python liveness_app.py -c 0.5`
+  * **Example**: `python liveness_app.py -c 0.5`
 * **`liveness_app_android.py`**: Run face detection, draw bounding box, and run liveness detection model real-time with android cam
   Command line argument:
   * `--url (or -u)` Path to URL link of android cam 
   * `--confidence (or -c)` Confidence of face detector model (default is 0.5 | 50%)
-  **Example**: `python liveness_app.py -u http://192.168.83.33:8080 -c 0.5` 
+  * **Example**: `python liveness_app.py -u http://192.168.83.33:8080 -c 0.5` 
 * **`liveness_app_from_picture.py`**: Run liveness detection model from an existing picture
   Command line argument:
   * `--input (or -i)` Path to input image
   * `--confidence (or -c)` Confidence of face detector model (default is 0.5 | 50%)
-  **Example**: `python liveness_app.py -i image.jpg -c 0.5`
+  * **Example**: `python liveness_app.py -i image.jpg -c 0.5`
 * **`dataset`** folder: Example folder and images for training liveness detection model. (These images are outputs of `collect_dataset.py`)
 * **`face_detector`** folder: The folder containing the caffe model files including .prototxt and .caffemodel to use with OpenCV and do face detection
 * **`images`** folder: Example folder and images for inputting to `face_from_image.py`
