@@ -18,14 +18,18 @@ Check out requirements.txt for the correct version of packages.
   * `--detector (or -d)` Path to OpenCV\'s deep learning face detector  
   * `--confidence (or -c)` Confidence of face detector model (default is 0.5 | 50%)
   * `--skip (or -s)` Number of frames to skip before applying face detection and crop (default is 16). The main idea for this is the consequence frames usually give the same face to the dataset, so it can easily causes overfitting and is not a useful data for training.  
-  **Example**: example for *fake video* dataset -> `python collect_dataset.py -i videos/fake_1.mp4 -o dataset/fake -d face_detector -c 0.5 -s 15` | example for *real video* dataset -> `python collect_dataset.py -i videos/real_1.mp4 -o dataset/real -d face_detector -c 0.5 -s 15`
+  * **Example**: 
+    * example for *fake video* dataset -> `python collect_dataset.py -i videos/fake_1.mp4 -o dataset/fake -d face_detector -c 0.5 -s 15` 
+    * example for *real video* dataset -> `python collect_dataset.py -i videos/real_1.mp4 -o dataset/real -d face_detector -c 0.5 -s 15`
 * **`face_from_image.py`**: Collect face in each frame from a *image* dataset (real/fake) using face detector model (resnet-10 SSD in this case) and save to a directory (we provided a video example in videos folder, so you can collect the correct video dataset to train the model)  
   Command line argument:
   * `--input (or -i)` Path to input input image (A single image | Since we mainly collect dataset from videos, we use this code only to collect face from those solid-printed picture (picture from paper/card) and we didn't have many of them. So, we make the code just for collect face from 1 image. Feel free to adjust the code if you want to make it able to collect faces from all image in a folder/directory)
   * `--output (or -o)` Path/Directory to output directory of cropped face images
   * `--detector (or -d)` Path to OpenCV\'s deep learning face detector  
   * `--confidence (or -c)` Confidence of face detector model (default is 0.5 | 50%)  
-  **Example**: example for *fake image* dataset -> `python face_from_image.py -i images/fakes/2.jpg -o dataset/fake -d face_detector -c 0.5` | example for *real image* dataset -> `python face_from_image.py -i images/reals/1.jpg -o dataset/real -d face_detector -c 0.5`
+  * **Example**: 
+    * example for *fake image* dataset -> `python face_from_image.py -i images/fakes/2.jpg -o dataset/fake -d face_detector -c 0.5`
+    * example for *real image* dataset -> `python face_from_image.py -i images/reals/1.jpg -o dataset/real -d face_detector -c 0.5`
 * **`livenessnet.py`**: Model architecture for our liveness detection model and build function to build the neural network (there is no command line arguement for this file (no need to do that)). The class *LivenessNet* will be called from the `train_model.py` file in order to build a model and run the training process.
 * **`train_model.py`**: The code used to train the liveness detection model and output .model, label_encoder.pickle, and plot.png image files.  
   Command line argument:
@@ -34,7 +38,7 @@ Check out requirements.txt for the correct version of packages.
   * `--le (or -l)` Path to output Label Encoder 
   * `--plot (or -p)` Path to output loss/accuracy plot
   * `--cm (or -c)` Path to confusion matrix  
-  **Example**: `python train_model.py -d dataset -m liveness.model -l label_encoder_model.pickle -p plot.png` or `python train_model.py -d dataset -m liveness.h5 -l label_encoder.pickle -p plot.png -c cm.png`
+  **Example**: `python train_model.py -d dataset -m liveness.h5 -l label_encoder.pickle -p plot.png -c cm.png`
 * **`liveness_app.py`**: Run face detection, draw bounding box, and run liveness detection model real-time on webcam  
   Command line argument:
   * `--confidence (or -c)` Confidence of face detector model (default is 0.5 | 50%)  
