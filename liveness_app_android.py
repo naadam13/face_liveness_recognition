@@ -57,6 +57,7 @@ while True:
     img_arr = np.array(bytearray(img_resp.content), dtype=np.uint8)
     frame = cv2.imdecode(img_arr, -1)
     frame = imutils.resize(frame, width=600)
+    cv2.putText(frame, "Press 'q' to quit", (20,35), cv2.FONT_HERSHEY_COMPLEX, 0.75, (0,255,0), 2)
     
     # grab the frame dimensions and convert it to a blob
     # blob is used to preprocess image to be easy to read for NN
