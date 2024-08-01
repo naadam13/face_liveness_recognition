@@ -1,17 +1,14 @@
-# Face Liveness Detection
+# Face Liveness and Recognition
 ## Project Overview
 We have implemented face verification detection with liveness detection mechanism (to check whether the person detected on the camera is a REAL person or FAKE (eg. image, video, etc. of that person)), built with Convolutional Neural Network.
 
 ## Packages and Tools
 Check out requirements.txt for the correct version of packages.
-- Python 3.9.5
+- Python
 - OpenCV
-- TensorFlow 2.5
+- TensorFlow
 - Scikit-learn
 - Face_recognition
-- Flask
-- SQLite
-- SQLAlchemy (for Flask)
 
 ## Files explanation 
 * **`collect_dataset.py`**: Collect face in each frame from a *video* dataset (real/fake) using face detector model (resnet-10 SSD in this case) and save to a directory (we provided a video example in videos folder, so you can collect the correct video dataset to train the model)  
@@ -76,7 +73,7 @@ Check out requirements.txt for the correct version of packages.
 ## What can be improved
 - Collect more data in many light conditions and from different genders/ethnics to improve the model (it turned out light intensity and condition play a big role here)
 
-## Resources
+## References
 - https://www.pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/
 - https://www.pyimagesearch.com/2019/03/11/liveness-detection-with-opencv/
 - https://www.youtube.com/watch?v=2Zz97NVbH0U&t=790s
